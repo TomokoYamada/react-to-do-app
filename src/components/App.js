@@ -1,19 +1,36 @@
 import React, {Component} from 'react';
 // import logo from '../logo.svg';
 import '../App.css';
+import { props } from 'bluebird';
 
 export default class App extends Component{
+
   render() {
     return (
       <div className = "App">
         <h1>ToDoList</h1>
+        <InputForm
+        addTodo = {this.addTodo}
+        />
         <ul>
-          <li>Reactを学ぶ</li>
+          <li>
+          </li>
         </ul>
       </div>
     );
+    function InputForm() {
+      return (
+        <form onSubmit = {props.addTodo}>
+          <input type = "text">
+          </input>
+          <input type = "submit" value = "add">
+          </input>
+        </form>
+      );
+    }
   }
 }
+
 
 // function App() {
 //   return (
